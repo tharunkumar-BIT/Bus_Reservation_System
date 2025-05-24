@@ -24,4 +24,24 @@ public class Booking {
 			e.printStackTrace();
 		}
 	}
+	
+	public boolean isAvailable(ArrayList<Booking> bookings, ArrayList<Bus> buses) {
+		// only read the data, don't change anything on the list because reference will be received as parameter in this function
+		// if we change, it would lead to data lost or miss match
+		int capacity = 0;
+		for(Bus bus : buses) {
+			if(bus.getBusNo() == busNo) {
+				capacity = bus.getCapacity();
+			}
+		}
+		
+		int booked = 0;
+		for(Booking b : bookings) {
+			if(b.busNo == busNo && b.date.equals(date)) {
+				booked++;
+			}
+		}
+		
+		return booked < capacity ? true : false;
+	}
 }
