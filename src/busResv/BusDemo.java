@@ -6,6 +6,7 @@ public class BusDemo {
 	public static void main(String[] args) {
 		
 		ArrayList<Bus> buses = new ArrayList<Bus>();
+		ArrayList<Booking> bookings = new ArrayList<Booking>();
 		
 		buses.add(new Bus(1,true, 45));
 		buses.add(new Bus(2, false, 50));
@@ -22,7 +23,8 @@ public class BusDemo {
 			System.out.println("Enter 1 to Book amd 2 to exit");
 			userOpt = scanner.nextInt();
 			if(userOpt == 1) {
-				System.out.println("Booking......");
+				Booking booking = new Booking();
+				
 			}
 		}
 	}
